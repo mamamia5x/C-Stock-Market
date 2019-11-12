@@ -7,9 +7,10 @@ using namespace std;
 
 
 int stockbuy;
-char answer;
-double s1dec;
 int stock1posneg;
+char answer;
+char stock1pm;
+double s1dec;
 long double stock1change;
 long double stocksell;
 long double spendmoney;
@@ -26,7 +27,7 @@ void reshow ()
   cout << "Day " << day << endl << endl << endl;
   cout << "(1) GOO $" << fixed << stock1;
   cout << " " << stock1owned << " Stocks Owned" ;
-  cout << " " << stock1change << "% Change" << endl << endl;
+  cout << " " << stock1pm << stock1change << "% Change" << endl << endl;
 }
 void math ()
 {
@@ -39,11 +40,13 @@ void math ()
   {
     stock1 = (stock1change * stock1) + stock1;
     stock1change = stock1change * 100;
+    stock1pm = ' ';
   }
   if (stock1posneg < 5)
   {
     stock1 = -(stock1change * stock1) + stock1; //Negative Decrease
     stock1change = stock1change * 100;
+    stock1pm = '-';
   }
 }
 void buy ()
