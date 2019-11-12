@@ -8,3 +8,5 @@ made a long time ago, but lost
 the project. Now I'm trying to revive
 the old program. I'll leave a link
 to the new project url once finished.
+
+You can play the game [here](https://c-stock-market.mamamia5x.repl.run)!
