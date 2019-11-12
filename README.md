@@ -1,5 +1,5 @@
-# C-Stock-Market
-A C++ Stock Market Simulator
+# C++ Stock Market Sim
+A simple C++ Stock Market Simulator.
 
 
 _____________________________
