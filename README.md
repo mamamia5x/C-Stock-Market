@@ -13,6 +13,8 @@ You can play the game [here](https://c-stock-market.mamamia5x.repl.run)!
 
 # Version History
 ________________
+## Version 1.1.1
+Added month and year.
 ## Version 1.1
 Added second stock
 ## Version 1.0.1
