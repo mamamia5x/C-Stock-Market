@@ -12,6 +12,8 @@ You can play the game [here](https://c-stock-market.mamamia5x.repl.run)!
 
 
 # Version History
+## Version 1.1.2
+Fixed negative decrease rate, it was too high.
 ________________
 ## Version 1.1.1
 Added month and year.
