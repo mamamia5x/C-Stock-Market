@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string>
 
 using namespace std;
 
@@ -20,27 +21,133 @@ long double stocksell;
 long double spendmoney;
 long double stock1;
 long double stock2;
+string monthtext;
 long double money = 100; 
+int showday = 0;
 int day = 0;
+int month = 1;
+int year = 2000;
 int stock1owned = 0;
 int stock2owned = 0;
 
+void date (){
+   if (month == 1) //31 days
+  {
+    monthtext = "January";
+    if (day == 32)
+    {
+      month ++;
+      day = 1;
+    }
+  }
+  if (month == 2){
+    monthtext = "February";
+    if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
+    {
+      if (day == 30)
+      {
+        month ++;
+        day = 1;
+      }    
+      else if (day == 29)
+      {
+        month ++;
+        day = 1;
+      }
+    }
+  }
+  if (month == 3){
+    monthtext = "March";
+    if (day == 32){
+      month ++;
+      day = 1;
+    }
+  }
+  if (month == 4){
+    monthtext = "April";
+    if (day == 31){
+      month ++;
+      day = 1;
+    }
+  }
+  if (month == 5){
+    monthtext = "May";
+    if (day == 32){
+      month ++;
+      day = 1;
+    }
+  }
+  if (month == 6){
+    monthtext = "June";
+    if (day == 31){
+      month ++;
+      day = 1;
+    }
+  }
+  if (month == 7){
+    monthtext = "July";
+    if (day == 32){
+      month ++;
+      day = 1;
+    }
+  }
+  if (month == 8){
+    monthtext = "August";
+    if (day == 32){
+      month ++;
+      day = 1;
+    }
+  }
+  if (month == 9){
+    monthtext = "September";
+    if (day == 31){
+      month ++;
+      day = 1;
+    }
+  }
+  if (month == 10){
+    monthtext = "October";
+    if (day == 32){
+      month ++;
+      day = 1;
+    }
+  }
+  if (month == 11){
+    monthtext = "November";
+    if (day == 31)
+    {
+      month ++;
+      day = 1;
+    }
+  }
+  if (month == 12){
+    monthtext = "December";
+    if (day == 32){
+      year ++;
+      month = 1;
+      day = 1;
+    }
+  }
+}
 void reshow ()
 {
+  date ();
   system ("clear");
   cout.precision(2);
   cout << "$" << fixed << money << endl;
-  cout << "Day " << day << endl << endl << endl;
+  cout << monthtext << ' ' << day << ", " << year << endl;
+  cout << "Day " << showday << endl << endl << endl;
   cout << "(1) GOO $" << fixed << stock1;
   cout << " " << stock1owned << " Stocks Owned" ;
   cout << " " << stock1pm << stock1change << "% Change" << endl << endl;
-  cout << "(2) REP $" << fixed << stock2;
+  cout << "(2) REPL $" << fixed << stock2;
   cout << " " << stock2owned << " Stocks Owned" ;
   cout << " " << stock2pm << stock2change << "% Change" << endl << endl;
 }
 void math ()
 {
   day ++;
+  showday ++;
   srand(time(0));
   stock1posneg = rand () % 10;
   stock1change = rand () % 200;
