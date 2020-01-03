@@ -23,6 +23,8 @@ Planning on fixing the script and making if's switch statements. Also planning o
 
 # Version History
 ________________
+## Version 1.2.4
+Added highest value, also added >> when entering.
 ## Version 1.2.3
 Changed the rates of stock increase, should increase more.
 ## Version 1.2.2
