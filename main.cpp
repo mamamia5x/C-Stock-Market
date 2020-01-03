@@ -168,33 +168,33 @@ void math ()
   stock1change = stock1change / 10000;
   stock2change = stock2change / 10000;
   stock3change = stock3change / 10000;
-  if (stock1posneg >= 5) //Positive Increase
+  if (stock1posneg <= 5) //Positive Increase
   {
     stock1 = (stock1change * stock1) + stock1;
     stock1change = stock1change * 100;
     stock1pm = ' ';
   }
-  else if (stock1posneg < 5){
+  else if (stock1posneg > 5){
     stock1 = -(stock1change * stock1) + stock1; //Negative Decrease
     stock1change = stock1change * 100;
     stock1pm = '-';
   }
-  if (stock2posneg >= 5){
+  if (stock2posneg <= 5){
     stock2 = (stock2change * stock2) + stock2;
     stock2change = stock2change * 100;
     stock2pm = ' ';
   }
-  else if (stock2posneg < 5){
+  else if (stock2posneg > 5){
     stock2 = -(stock2change * stock2) + stock2;
     stock2change = stock2change * 100;
     stock2pm = '-';
   }
-  if (stock3posneg >= 5){
+  if (stock3posneg <= 5){
     stock3 = (stock3change * stock3) + stock3;
     stock3change = stock3change * 100;
     stock3pm = ' ';
   }
-  else if (stock3posneg < 5){
+  else if (stock3posneg > 5){
     stock3 = -(stock3change * stock3) + stock3;
     stock3change = stock3change * 100;
     stock3pm = '-';
