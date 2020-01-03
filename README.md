@@ -23,8 +23,10 @@ Planning on fixing the script and making if's switch statements. Also planning o
 
 # Version History
 ________________
-## Version 1.2.2
+## Version 1.2.3
 Changed the rates of stock increase, should increase more.
+## Version 1.2.2
+Fixed the leap year bug, now leap year actually works.
 ## Version 1.2.1
 Added title screen
 ## Version 1.2
