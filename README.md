@@ -12,7 +12,7 @@ You can play the game [here](https://c-stock-market.mamamia5x.repl.run)!
 
 # News
 _______
-Submit Idea to add a new stock. You can submit it [here](https://simple1.mamamia5x.repl.co/)!
+##### Submit Idea to add a new stock. You can submit it [here](https://simple1.mamamia5x.repl.co/)!
 
 # Upcoming Updates
 _________________
