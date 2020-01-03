@@ -10,17 +10,22 @@ using namespace std;
 int stockbuy;
 int stock1posneg;
 int stock2posneg;
+int stock3posneg;
 char answer;
 char stock1pm;
 char stock2pm;
+char stock3pm;
 double s1dec;
 double s2dec;
+double s3dec;
 long double stock1change;
 long double stock2change;
+long double stock3change;
 long double stocksell;
 long double spendmoney;
 long double stock1;
 long double stock2;
+long double stock3;
 string monthtext;
 long double money = 100; 
 int showday = 0;
@@ -29,6 +34,7 @@ int month = 1;
 int year = 2000;
 int stock1owned = 0;
 int stock2owned = 0;
+int stock3owned = 0;
 
 void date (){
    if (month == 1) //31 days
@@ -143,6 +149,9 @@ void reshow ()
   cout << "(2) REPL $" << fixed << stock2;
   cout << " " << stock2owned << " Stocks Owned" ;
   cout << " " << stock2pm << stock2change << "% Change" << endl << endl;
+  cout << "(3) MAMA $" << fixed << stock3;
+  cout << " " << stock3owned << " Stocks Owned" ;
+  cout << " " << stock3pm << stock3change << "% Change" << endl << endl;
 }
 void math ()
 {
@@ -153,8 +162,11 @@ void math ()
   stock1change = rand () % 200;
   stock2posneg = rand () % 11 - 1;
   stock2change = rand () % 200;
+  stock3posneg = rand () % 10;
+  stock3change = rand () % 200;
   stock1change = stock1change / 10000;
   stock2change = stock2change / 10000;
+  stock3change = stock3change / 10000;
   if (stock1posneg >= 5) //Positive Increase
   {
     stock1 = (stock1change * stock1) + stock1;
@@ -175,6 +187,16 @@ void math ()
     stock2 = -(stock2change * stock2) + stock2;
     stock2change = stock2change * 100;
     stock2pm = '-';
+  }
+  if (stock3posneg >= 5){
+    stock3 = (stock3change * stock3) + stock3;
+    stock3change = stock3change * 100;
+    stock3pm = ' ';
+  }
+  else if (stock3posneg < 5){
+    stock3 = -(stock3change * stock3) + stock3;
+    stock3change = stock3change * 100;
+    stock3pm = '-';
   }
   
 }
@@ -203,6 +225,15 @@ void buy ()
       money = money - spendmoney;
     }
   }
+  if (answer == '3'){
+    cout << "How many shares would you like to buy?" << endl;
+    cin >> stockbuy;
+    spendmoney = stock3 * stockbuy;
+    if (spendmoney <= money){
+      stock3owned = stock3owned + stockbuy;
+      money = money - spendmoney;
+    }
+  }
 }
 
 void sell ()
@@ -227,6 +258,15 @@ void sell ()
     if (stocksell <= stock2owned){
       stock2owned = stock2owned - stocksell;
       stocksell = stock2 * stocksell;
+      money = money + stocksell;
+    }
+  }
+  else if (answer == '3'){
+    cout << "How many shares would you like sell?" << endl;
+    cin >> stocksell;
+    if (stocksell <= stock3owned){
+      stock3owned = stock3owned - stocksell;
+      stocksell = stock3 * stocksell;
       money = money + stocksell;
     }
   }
@@ -273,10 +313,13 @@ void startmath ()
   srand(time(0));
   stock1 = rand() % 100; 
   stock2 = rand() % 30;
+  stock3 = rand() % 150;
   s1dec = rand () % 100;
   s2dec = rand () % 99 + 1;
+  s3dec = rand () % 100;
   stock1 = (s1dec/100) + stock1;
-  stock2 = (s2dec/100) + stock2; 
+  stock2 = (s2dec/100) + stock2;
+  stock3 = (s3dec/100) + stock3; 
   math ();
   text();
   
