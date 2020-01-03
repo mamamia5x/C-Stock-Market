@@ -16,6 +16,7 @@ _______
 
 # Upcoming Updates
 _________________
+Stock voting in the link above. Name a stock and it might be in game.
 Planning on fixing the script and making if's switch statements. Also planning on adding more stocks. 
 
 
