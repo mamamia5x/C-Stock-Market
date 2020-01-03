@@ -1,5 +1,5 @@
 # C++ Stock Market Sim
-A simple C++ Stock Market Simulator.
+A simple C++ Stock Market Simulator. 
 *Play the game in full screen*
 
 _____________________________
