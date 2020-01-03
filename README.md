@@ -1,6 +1,6 @@
 # C++ Stock Market Sim
 A simple C++ Stock Market Simulator.
-
+*Play the game in full screen*
 
 _____________________________
 Welocome to an old project I
@@ -22,6 +22,8 @@ Planning on fixing the script and making if's switch statements. Also planning o
 
 # Version History
 ________________
+## Version 1.2.1
+Added title screen
 ## Version 1.2
 Added third stock
 ## Version 1.1.2
