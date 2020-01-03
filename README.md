@@ -22,6 +22,8 @@ Planning on fixing the script and making if's switch statements. Also planning o
 
 # Version History
 ________________
+## Version 1.2
+Added third stock
 ## Version 1.1.2
 Fixed negative decrease rate, it was too high.
 ## Version 1.1.1
