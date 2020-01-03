@@ -34,7 +34,9 @@ int year = 2000;
 int stock1owned = 0;
 int stock2owned = 0;
 int stock3owned = 0;
-
+long double stock1dif = 0;
+long double stock2dif = 0;
+long double stock3dif = 0;
 void date (){
    if (month == 1) //31 days
   {
@@ -146,13 +148,13 @@ void reshow ()
   cout << "Day " << showday << endl << endl << endl;
   cout << "(1) GOO $" << fixed << stock1;
   cout << " " << stock1owned << " Stocks Owned" ;
-  cout << " " << stock1pm << stock1change << "% Change" << endl << endl;
+  cout << " " << stock1pm << stock1change << "% Change $" << fixed << stock1dif << " highest value." << endl <<endl;
   cout << "(2) REPL $" << fixed << stock2;
   cout << " " << stock2owned << " Stocks Owned" ;
-  cout << " " << stock2pm << stock2change << "% Change" << endl << endl;
+  cout << " " << stock2pm << stock2change << "% Change $" << fixed << stock2dif << " highest value." << endl << endl;
   cout << "(3) MAMA $" << fixed << stock3;
   cout << " " << stock3owned << " Stocks Owned" ;
-  cout << " " << stock3pm << stock3change << "% Change" << endl << endl;
+  cout << " " << stock3pm << stock3change << "% Change $" << stock3dif << " highest value." << endl << endl;
 }
 void math ()
 {
@@ -199,16 +201,26 @@ void math ()
     stock3change = stock3change * 100;
     stock3pm = '-';
   }
-  
+  if (stock1 > stock1dif){
+    stock1dif = stock1;
+  }
+  if (stock2 > stock2dif){
+    stock2dif = stock2;
+  }
+  if (stock3 > stock3dif){
+    stock3dif = stock3;
+  }
 }
 void buy ()
 {
   reshow ();
   cout << "\n\nWhat stock do you want to buy?" << endl;
+  cout << ">> ";
   cin >> answer;
   if (answer == '1')
   {
     cout << "How many shares would you like to buy?" << endl;
+    cout << ">> ";
     cin >> stockbuy;
     spendmoney = stock1 * stockbuy;
     if (spendmoney <= money)
@@ -219,6 +231,7 @@ void buy ()
   }
   if (answer == '2'){
     cout << "How many shares would you like to buy?" << endl;
+    cout << ">> ";
     cin >> stockbuy;
     spendmoney = stock2 * stockbuy;
     if (spendmoney <= money){
@@ -241,10 +254,12 @@ void sell ()
 {
   reshow ();
   cout << "\n\nWhat stock do you want to sell?" << endl;
+  cout << ">> ";
   cin >> answer;
   if (answer == '1')
   {
     cout << "How many shares would you like sell?" << endl;
+    cout << ">> ";
     cin >> stocksell;
     if (stocksell <= stock1owned)
     {
@@ -255,6 +270,7 @@ void sell ()
   }
   else if (answer == '2'){
     cout << "How many shares would you like sell?" << endl;
+    cout << ">> ";
     cin >> stocksell;
     if (stocksell <= stock2owned){
       stock2owned = stock2owned - stocksell;
@@ -264,6 +280,7 @@ void sell ()
   }
   else if (answer == '3'){
     cout << "How many shares would you like sell?" << endl;
+    cout << ">> ";
     cin >> stocksell;
     if (stocksell <= stock3owned){
       stock3owned = stock3owned - stocksell;
@@ -279,7 +296,8 @@ void options ()
   cout << "\nWhat would you like to do?\n\nYou can:\n" << endl;
   cout << "(a). Buy a stock" << endl;
   cout << "(b). Sell a stock" << endl;
-  cout << "(c). End day" << endl;
+  cout << "(c). End day" << endl << endl;
+  cout << ">> ";
   cin >> answer;
   if (answer == 'a' || answer == 'A')
   {
