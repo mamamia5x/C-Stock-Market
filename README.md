@@ -9,7 +9,7 @@ made a long time ago, but lost
 the project. Now I'm trying to revive
 the old program.
 
-You can play the game [here](https://c-stock-market.mamamia5x.repl.run)!
+You can play the game [here](https://repl.it/talk/share/C-Stock-Market/25209)!
 
 # News
 _______
