@@ -11,16 +11,6 @@ the old program.
 
 You can play the game [here](https://repl.it/talk/share/C-Stock-Market/25209)!
 
-# News
-_______
-##### Submit Idea to add a new stock. You can submit it [here](https://simple1.mamamia5x.repl.co/)!
-
-# Upcoming Updates
-_________________
-Stock voting in the link above. Name a stock and it might be in game.
-Planning on fixing the script and making if's switch statements. Also planning on adding more stocks. 
-
-
 # Version History
 ________________
 ## Version 1.2.4
